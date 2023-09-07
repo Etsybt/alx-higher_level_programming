@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-import sys
+if __name__ == "__main__":
+    import sys
 
 # Remove the script name (first argument) from sys.argv
-arguments = sys.argv[1:]
+    arguments = sys.argv[1:]
 
-num_arguments = len(arguments)
+    num_arguments = len(arguments)
 
     if num_arguments == 0:
 	print("0 arguments.")
