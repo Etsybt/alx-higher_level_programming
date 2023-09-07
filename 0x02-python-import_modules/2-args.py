@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-if __name__ == "__main__"
+if __name__ == "__main__":
 
     import sys
 
-    argc = len(sys.arg) - 1
+    argc = len(sys.argv) - 1
     if argc == 0:
         print("0 arguments.")
     elif argc == 1:
@@ -12,4 +12,4 @@ if __name__ == "__main__"
     else:
         print("{} arguments:".format(argc))
     for c in range(argc):
-	print("{}: {}".format(c + 1, sys.arg[c + 1]))
+	print("{}: {}".format(c + 1, sys.argv[c + 1]))
