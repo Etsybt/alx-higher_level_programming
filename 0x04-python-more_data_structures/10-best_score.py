@@ -2,7 +2,7 @@
 def best_score(a_dictionary):
     if a_dictionary is None:
         return None
-	
+
     best_key = None
     best_value = float('-inf')
     
@@ -12,5 +12,3 @@ def best_score(a_dictionary):
             best_value = value
 
     return best_key
-
-# return max(a_dictionary, key = a_dictionary.get)
