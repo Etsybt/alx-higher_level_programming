@@ -3,10 +3,14 @@
 
 
 class Square:
-    """Defines a square by its size"""
+    """Defines a square by its size
+	    
+    Attributes:
+        size: square size
+    """
     def __init__(self, size):
         """Initialising the data.
         Args:
-            size (int): size of square.
+            size: size of square.
         """
-   self.__size = size
+        self.__size = size
