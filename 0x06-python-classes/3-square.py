@@ -10,8 +10,7 @@ class Square:
         size: square size.
     """
     def __init__(self, size=0):
-        """
-        Initialising the data.
+        """Initialising the data.
 
         Args:
             size: size of square.
@@ -26,9 +25,8 @@ class Square:
             self.__size = size
 	    
     def area(self):
-        """
-        Defines the square area.
+        """Defines the square area.
 
-        Retuens: the area of the square.
+        Returns: the area of the square.
         """
         return self.__size ** 2
