@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Square class"""
+"""defines a Square class"""
 
 
 class Square:
@@ -9,10 +9,8 @@ class Square:
     Attributes:
         size: square size.
     """
-
     def __init__(self, size):
-        """
-        Initialising the data.
+        """Initialising the data.
 
         Args:
             size: size of square.
