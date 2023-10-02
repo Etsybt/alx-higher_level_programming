@@ -3,23 +3,24 @@
 
 
 class Rectangle:
-    """Defiines a rectangle"""
+    """Defiines a rectangle by its width and height.
+
+    Args:
+        width: the rectangle's width.
+        height: the rectangle's height.
+    """
 
     def __init__(self, width=0, height=0):
-        """
-        Initialising the date.
-
-        Args:
-            width: the rectangle's width.
-            height: the rectangle's height.
-        """
-
         self.__height = height
         self.__width = width
 
     @property
     def width(self):
-        """returns the rectangle's width"""
+        """gets the width.
+	
+        Returns:
+            __width: the rectangle's width
+        """
 
         return self.__width
 
@@ -30,6 +31,9 @@ class Rectangle:
 
         Args:
             value: width of the rectangle.
+
+        Attributes:
+            __width: is the value
 
         Raise:
             TypeError: width must be an integer.
@@ -45,7 +49,11 @@ class Rectangle:
 
     @property
     def height(self):
-        """returns the rectangle's height"""
+        """gets the height.
+		
+        Returns:
+            the rectangle's height
+        """
 
         return self.__height
   
@@ -56,6 +64,10 @@ class Rectangle:
 
         Args:
             value: the rectangle's height.
+
+        Attributes:
+            __height: same
+
 
         Raise:
             TypeError: height must be an integer.
