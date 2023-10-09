@@ -1,0 +1,17 @@
+============================================
+How to use 1-my_list.txt
+============================================
+
+This library is very simple, since it only has one function called
+ ''print_sorted()''.
+
+Numbers:
+========
+''print_sorted()'' returns the list sorted.
+:: with positives integers
+    >>> MyList = __import__('1-my_list').MyList
+    >>> my_list = MyList()
+    >>> isinstance(my_list, list)
+    True
+    >>> my_list.print_sorted()
+    []
