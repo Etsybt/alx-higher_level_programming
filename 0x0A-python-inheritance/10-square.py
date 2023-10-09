@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""defines a Square class based on the parentClass Rectangle"""
 Rectangle = __import__('9-rectangle').Rectangle
+"""Defines a Square class based on the parentClass Rectangle."""
 
 
 class Square(Rectangle):
@@ -12,10 +12,12 @@ class Square(Rectangle):
         Args:
             size (int): the square's size.
         """
+
         self.integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
 			
     def area(self):
         """defines the square's area"""
-        return self.__size ** 2
+
+        return ((self.__size) ** 2)
