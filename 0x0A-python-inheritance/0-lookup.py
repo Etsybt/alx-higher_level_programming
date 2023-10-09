@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" defines the method lookup"""
+"""defines the method lookup"""
+
 
 
 def lookup(att):
