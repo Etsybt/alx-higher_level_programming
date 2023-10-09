@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Method lookup"""
+""" defines the method lookup"""
 
 
 def lookup(obj):
