@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Defines a Square class based on the parentClass Rectangle."""
+
 Rectangle = __import__('9-rectangle').Rectangle
 
 
