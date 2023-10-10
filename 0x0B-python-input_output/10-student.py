@@ -19,11 +19,14 @@ class Student:
 
     def to_json(self, attrs=None):
         """Get a dictionary representation of the Student.
-		
+
+        If attrs is a list of strings, represents only those attributes
+        included in the list.
+
         Args:
-            attrs (list): the attr to be represented.
+            attrs (list): (Optional) The attributes to represent.
         """
-        if (isinstance(attrs, list) and 
-			all(isinstance(x, str) for x in attrs)):
+        if (type(attrs) == list and
+                all(type(ele) == str for ele in attrs)):
             return {n: getattr(self, n) for n in attrs if hasattr(self, n)}
         return self.__dict__
