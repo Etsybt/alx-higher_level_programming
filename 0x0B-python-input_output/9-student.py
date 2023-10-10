@@ -3,8 +3,6 @@
 
 
 class Student:
-    """defines a student class"""
-	    
     def __init__(self, first_name, last_name, age):
         """public instance attributes.
 		
