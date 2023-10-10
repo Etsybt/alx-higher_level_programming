@@ -4,10 +4,10 @@
 
 class Student:
     """defines a student class"""
-    
+	    
     def __init__(self, first_name, last_name, age):
         """public instance attributes.
-
+		
         Args:
             first_name: student's first_name.
             last_name: student's last_name.
@@ -18,7 +18,5 @@ class Student:
         self.age = age
 
     def to_json(self):
-        """
-        retrieves a dictionary representation of a Student instance
-        """
+        """retrieves a dictionary representation of a Student instance"""
         return self.__dict__.copy()
