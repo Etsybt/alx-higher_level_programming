@@ -19,7 +19,8 @@ print(student_1)
 print(type(student_1))
 print(type(j_student_1))
 print("{} {} {}".format(student_1.first_name, student_1.last_name, student_1.age))
-ave_to_json_file(j_student_1, path)
+
+save_to_json_file(j_student_1, path)
 read_file(path)
 print("\nSaved to disk")
 
