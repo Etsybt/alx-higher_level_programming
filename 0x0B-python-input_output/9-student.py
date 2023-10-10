@@ -3,7 +3,7 @@
 
 
 class Student:
-    """DEfines a Student class."""
+    """Represent a Student class."""
 	    
     def __init__(self, first_name, last_name, age):
         """Initialize a Student object.
@@ -18,9 +18,5 @@ class Student:
         self.age = age
 	
     def to_json(self):
-        """Return a dictionary representation of the Student object.
-		
-        Returns:
-            dict: dictionnary representation
-	"""
-        return self.__dict__.copy()
+        """Return a dictionary representation of the Student."""
+        return self.__dict__
