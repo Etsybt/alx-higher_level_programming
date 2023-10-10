@@ -23,7 +23,7 @@ class Student:
         Args:
             attrs (list): the attr to be represented.
         """
-        if  (isinstance(attrs, list) and
+        if (isinstance(attrs, list) and
 			all(isinstance(x, str) for x in attrs)):
             return {n: getattr(self, n) for n in attrs if hasattr(self, n)}
         return self.__dict__
