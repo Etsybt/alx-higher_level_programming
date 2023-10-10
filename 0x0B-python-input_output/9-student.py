@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""defines Student class"""
-
+"""defines a Student class."""
 
 
 class Student:
     """student class"""
-
+	    
     def __init__(self, first_name, last_name, age):
         """public instance attributes.
 		
@@ -24,4 +23,4 @@ class Student:
         Returns:
             dict: dictionnary representation
 	"""
-        return (self.__dict__.copy())
+        return self.__dict__.copy()
