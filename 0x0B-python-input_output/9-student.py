@@ -2,6 +2,7 @@
 """defines Student class"""
 
 
+
 class Student:
     """student class"""
 
@@ -13,12 +14,14 @@ class Student:
             last_name: student's last_name.
             age: student's age.
         """
-
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-
+	
     def to_json(self):
-        """class dir"""
+        """class dir
 
+        Returns:
+            dict: dictionnary representation
+	"""
         return (self.__dict__.copy())
