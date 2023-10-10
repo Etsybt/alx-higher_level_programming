@@ -1,24 +1,24 @@
 #!/usr/bin/python3
-"""defines a Student class."""
+"""Defines a Student class."""
 
 
 class Student:
-    """student class"""
+    """Student class."""
 	    
     def __init__(self, first_name, last_name, age):
-        """public instance attributes.
+        """Initialize a Student object.
 		
         Args:
-            first_name: student's first_name.
-            last_name: student's last_name.
-            age: student's age.
+            first_name (str): student's first_name.
+            last_name (str): student's last_name.
+            age (int): student's age.
         """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 	
     def to_json(self):
-        """class dir
+        """Return a dictionary representation of the Student object.
 
         Returns:
             dict: dictionnary representation
