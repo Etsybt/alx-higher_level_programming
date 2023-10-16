@@ -24,7 +24,7 @@ class Square(Rectangle):
         Returns:
             str.
         """
-        return ("[Rectangle] ({}) {}/{} - {}/{}"
+        return ("[Square] ({}) {}/{} - {}/{}"
                 .format(self.id, self.x, self.y, self.width, self.height))
 
     @property
@@ -46,6 +46,17 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def attr(self, id=None, size=None, x=None, y=None):
+        """updates attr."""
+        if id is not None:
+            self.id = id
+        if size is not None:
+            self.size = size
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
     def update(self, *args, **kwargs):
         """gives args attributes.
 
@@ -53,28 +64,10 @@ class Square(Rectangle):
             args (int): args to be assigned attr.
             kwargs (dict): key-worded argument.
         """
-        if args is not None and len(args) != 0:
-            for n in range(len(args)):
-                if n == 0:
-                    self.id = args[n]
-                elif n == 1:
-                    self.width = args[n]
-                    self.height = args[n]
-                elif n == 2:
-                    self.x = args[n]
-                elif n == 3:
-                    self.y = args[n]
-        elif kwargs is not None and len(kwargs) != 0:
-            for key in kwargs:
-                if key == "id":
-                    self.id = kwargs[key]
-                elif key == "size":
-                    self.width = kwargs[key]
-                    self.height = kwargs[key]
-                elif key == "x":
-                    self.x = kwargs[key]
-                elif key == "y":
-                    self.y = kwargs[key]
+        if args:
+            self.attr(*args)
+        elif kwargs:
+            self.attr(**kwargs)
 
     def to_dictionary(self):
         """return dict representation of a Square.
@@ -84,8 +77,7 @@ class Square(Rectangle):
         """
         return {
             'id': self.id,
-            'width': self.width,
-            'height': self.height,
+            'size': self.width,
             'x': self.x,
             'y': self.y
         }

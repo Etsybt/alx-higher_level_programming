@@ -136,6 +136,19 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}"
                 .format(self.id, self.x, self.y, self.width, self.height))
 
+    def attr(self, id=None, width=None, height=None, x=None, y=None):
+        """updates attr."""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
     def update(self, *args, **kwargs):
         """gives args to attributes.
 
@@ -143,30 +156,11 @@ class Rectangle(Base):
             args (int): args to be assigned.
             kwargs (dict): key-worded argument.
         """
-        if args is not None and len(args) != 0:
-            for n in range(len(args)):
-                if n == 0:
-                    self.id = args[n]
-                elif n == 1:
-                    self.__width = args[n]
-                elif n == 2:
-                    self.__height = args[n]
-                elif n == 3:
-                    self.__x = args[n]
-                elif n == 4:
-                    self.__y = args[n]
-        elif kwargs is not None and len(kwargs) != 0:
-            for key in kwargs:
-                if key == "id":
-                    self.id = kwargs[key]
-                elif key == "width":
-                    self.__width = kwargs[key]
-                elif key == "height":
-                    self.__height = kwargs[key]
-                elif key == "x":
-                    self.__x = kwargs[key]
-                elif key == "y":
-                    self.__y = kwargs[key]
+        if args:
+            self.attr(*args)
+        if kwargs:
+            self.attr(**kwargs)
+
 
     def to_dictionary(self):
         """returns a dict representation of a rectangle.
