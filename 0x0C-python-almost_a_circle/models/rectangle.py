@@ -161,7 +161,6 @@ class Rectangle(Base):
         if kwargs:
             self.attr(**kwargs)
 
-
     def to_dictionary(self):
         """returns a dict representation of a rectangle.
 

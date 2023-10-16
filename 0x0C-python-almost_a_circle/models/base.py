@@ -43,14 +43,16 @@ class Base:
             list_objs = []
 
         filename = "{}.json".format(cls.__name__)
-        json_string = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+        json_string = cls.to_json_string(
+                [obj.to_dictionary() for obj in list_objs])
 
         with open(filename, 'w') as file:
             file.write(json_string)
 
     @staticmethod
     def from_json_string(json_string):
-        """Return the list of dictionaries from a JSON string representation."""
+        """Return the list of dictionaries
+        from a JSON string representation."""
         if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
@@ -69,7 +71,7 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
-    
+
     @classmethod
     def load_from_file(cls):
         """returns a list of instances
@@ -77,15 +79,14 @@ class Base:
             list of instances
         """
         filename = "{:s}.json".format(cls.__name__)
-
         try:
             with open(filename, mode="r", encoding="utf-8") as a_file:
-                content_string = a_file.read()  # str of list of dictionaries
-            a_list = cls.from_json_string(content_string)  # str to list
+                content_string = a_file.read()
+            a_list = cls.from_json_string(content_string)
             list_instances = []
-            for i in range(len(a_list)):  # a_list[i]: dictionary of attributes
+            for i in range(len(a_list)):
                 list_instances.append(cls.create(**a_list[i]))
-        except:
+        except Exception as e:
             list_instances = []
 
         return list_instances
