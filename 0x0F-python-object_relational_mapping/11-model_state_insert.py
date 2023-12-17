@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """prints the State object with the name
-   passed as argument from the database"""
+  passed as argument from the database"""
 from sys import argv
 import sys
 from sqlalchemy import create_engine
@@ -13,13 +13,12 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    state_name = sys.argv[4]
 
-    state = session.query(State).filter(State.name == state_name).first()
+    new_state = State(name="Louisiana")
 
-    if state:
-        print(state.id)
-    else:
-        print("Not found")
+    session.add(new_state)
+    session.commit()
+
+    print(new_state.id)
 
     session.close()
