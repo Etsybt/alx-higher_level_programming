@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""cript that fetches https://alx-intranet.hbtn.io/status """
-import urllib.request
+"""cript that fetches https://alx-intranet.hbtn.io"""
+from urllib import request
 
 
-if name == "main":
+if __name__ == "__main__":
     with urllib.request.urlopen("https://intranet.hbtn.io/status") as req_back:
         page = req_back.read()
         print("Body response:")
