@@ -1,12 +1,17 @@
 #!/usr/bin/python3
-"""cript that fetches https://alx-intranet.hbtn.io"""
-from urllib import request
+"""
+Script that fetches https://alx-intranet.hbtn.io/status
+"""
 
+import urllib.request
 
 if __name__ == "__main__":
-    with urllib.request.urlopen("https://intranet.hbtn.io/status") as req_back:
-        page = req_back.read()
-        print("Body response:")
-        print("\t- type: {}".format(type(page)))
-        print("\t- content: {}".format(type(page)))
-        print("\t- utf8 content: {}".format(page.decode('utf-8')))
+    url = 'https://alx-intranet.hbtn.io/status'
+    with urllib.request.urlopen(url) as response:
+        body = response.read()
+        utf8_content = body.decode('utf-8')
+
+    print("Body response:")
+    print("\t- type: {}".format(type(body)))
+    print("\t- content: {}".format(body))
+    print("\t- utf8 content: {}".format(utf8_content))
