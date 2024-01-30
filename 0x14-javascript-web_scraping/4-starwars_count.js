@@ -11,11 +11,6 @@ request(apiUrl, (error, response, body) => {
     return;
   }
 
-  if (response.statusCode !== 200) {
-    console.error(`Failed to retrieve data. Status code: ${response.statusCode}`);
-    return;
-  }
-
   const films = JSON.parse(body).results;
   const filmsWithWedgeAntilles = films.filter(film =>
     film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
