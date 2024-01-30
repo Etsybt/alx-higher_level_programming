@@ -1,20 +1,34 @@
 #!/usr/bin/node
 
 const request = require('request');
+const starWarsApiUrl = process.argv[2];
+let appearanceCount = 0;
 
-const apiUrl = process.argv[2];
-const characterId = '18';
-
-request(apiUrl, (error, response, body) => {
+request(starWarsApiUrl, function (error, response, body) {
   if (error) {
-    console.error(error);
+    console.error('Error:', error);
+    return;
+  }
+
+  if (response.statusCode !== 200) {
+    console.error('Status:', response.statusCode);
     return;
   }
 
   const films = JSON.parse(body).results;
-  const filmsWithWedgeAntilles = films.filter(film =>
-    film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
-  );
 
-  console.log(filmsWithWedgeAntilles.length);
+  for (let i = 0; i < films.length; ++i) {
+    const characters = films[i].characters;
+
+    for (let j = 0; j < characters.length; ++j) {
+      const characterUrl = characters[j];
+      const characterId = characterUrl.split('/')[5];
+
+      if (characterId === '18') {
+        appearanceCount += 1;
+      }
+    }
+  }
+
+  console.log(appearanceCount);
 });
